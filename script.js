@@ -131,4 +131,21 @@ function handleFormSubmit(e) {
     // Clear the form
     e.target.reset();
 }
-```
+// Interactive background effect
+document.addEventListener('DOMContentLoaded', function() {
+  const interactiveBg = document.createElement('div');
+  interactiveBg.id = 'interactive-bg';
+  document.body.appendChild(interactiveBg);
+
+  document.addEventListener('mousemove', function(e) {
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+    
+    interactiveBg.style.opacity = '1';
+    interactiveBg.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, rgba(255,0,255,0.2) 0%, rgba(255,0,255,0) 70%)`;
+  });
+
+  document.addEventListener('mouseleave', function() {
+    interactiveBg.style.opacity = '0';
+  });
+}); 
