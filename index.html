@@ -4,158 +4,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdrienJalayer - Creative Front-End Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Adrien Jalayer - Creative Front-End Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="light-mode">
     <header>
-        <nav>
-            <div class="logo">AJ</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button id="lang-switch">فارسی</button>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand glitch" href="#" data-text="AJ">AJ</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#home" data-i18n="nav.home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav.about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills" data-i18n="nav.skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                    <div class="ms-3">
+                        <button id="darkModeToggle" class="btn btn-outline-primary">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button id="languageToggle" class="btn btn-outline-primary ms-2" data-i18n="language">EN</button>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1 class="glitch" data-text="AdrienJalayer">AdrienJalayer</h1>
-                <p class="tagline">Crafting Digital Experiences with Code</p>
-                <a href="#contact" class="cta-button">Let's Collaborate</a>
-            </div>
-            <div class="hero-image">
-                <img src="https://via.placeholder.com/500x500" alt="AdrienJalayer">
-            </div>
-        </section>
-
-        <section id="about">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Hello! I'm Adrien, a passionate front-end developer with a knack for creating engaging and efficient user experiences. With a blend of technical expertise and creative flair, I transform ideas into captivating digital realities.</p>
-                    <p>My approach combines cutting-edge technologies with user-centric design principles, ensuring that every project not only looks stunning but also delivers exceptional performance and usability.</p>
-                    <a href="#portfolio" class="btn">Check Out My Work</a>
-                </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Projects Completed</span>
+        <section id="home" class="py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h1 class="display-4 fw-bold glitch" data-text="Adrien Jalayer">Adrien Jalayer</h1>
+                        <p class="lead" data-i18n="home.tagline">Crafting Digital Experiences with Code</p>
+                        <a href="#contact" class="btn btn-primary btn-lg" data-i18n="home.cta">Let's Collaborate</a>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">98%</span>
-                        <span class="stat-label">Client Satisfaction</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Years Experience</span>
+                    <div class="col-lg-6">
+                        <div class="hero-shape"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills">
-            <h2 class="section-title">My Toolkit</h2>
-            <div class="skills-container">
-                <div class="skill-item" data-skill="HTML5">
-                    <i class="fab fa-html5"></i>
-                    <span>HTML5</span>
-                </div>
-                <div class="skill-item" data-skill="CSS3">
-                    <i class="fab fa-css3-alt"></i>
-                    <span>CSS3</span>
-                </div>
-                <div class="skill-item" data-skill="JavaScript">
-                    <i class="fab fa-js"></i>
-                    <span>JavaScript</span>
-                </div>
-                <div class="skill-item" data-skill="React">
-                    <i class="fab fa-react"></i>
-                    <span>React.js</span>
-                </div>
-                <div class="skill-item" data-skill="Bootstrap">
-                    <i class="fab fa-bootstrap"></i>
-                    <span>Bootstrap</span>
-                </div>
-                <div class="skill-item" data-skill="Responsive">
-                    <i class="fas fa-mobile-alt"></i>
-                    <span>Responsive Design</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x300" alt="Project 1">
-                    <div class="portfolio-overlay">
-                        <h3>E-commerce Platform</h3>
-                        <p>A fully responsive online store with dynamic product listings and secure checkout.</p>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x300" alt="Project 2">
-                    <div class="portfolio-overlay">
-                        <h3>Social Media Dashboard</h3>
-                        <p>An interactive dashboard for managing multiple social media accounts with real-time analytics.</p>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x300" alt="Project 3">
-                    <div class="portfolio-overlay">
-                        <h3>Task Management App</h3>
-                        <p>A user-friendly task manager with drag-and-drop functionality and progress tracking.</p>
-                        <a href="#" class="btn">View Project</a>
+        <section id="about" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5" data-i18n="about.title">About Me</h2>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <p class="lead" data-i18n="about.description">
+                            I'm a passionate front-end developer with a knack for creating engaging and efficient user experiences. 
+                            My approach combines cutting-edge technologies with user-centric design principles, 
+                            ensuring that every project not only looks stunning but also delivers exceptional performance and usability.
+                        </p>
+                        <div class="row text-center mt-5">
+                            <div class="col-md-4">
+                                <div class="feature-icon mb-3">
+                                    <i class="fas fa-code fa-3x"></i>
+                                </div>
+                                <h3 data-i18n="about.feature1.title">Clean Code</h3>
+                                <p data-i18n="about.feature1.description">Writing elegant, efficient, and maintainable code is my passion.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="feature-icon mb-3">
+                                    <i class="fas fa-paint-brush fa-3x"></i>
+                                </div>
+                                <h3 data-i18n="about.feature2.title">Creative Design</h3>
+                                <p data-i18n="about.feature2.description">I blend functionality with aesthetics to create visually appealing interfaces.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="feature-icon mb-3">
+                                    <i class="fas fa-tachometer-alt fa-3x"></i>
+                                </div>
+                                <h3 data-i18n="about.feature3.title">Performance</h3>
+                                <p data-i18n="about.feature3.description">Optimizing for speed and efficiency is always a top priority.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2 class="section-title">Get in Touch</h2>
-            <div class="contact-container">
-                <form id="contact-form">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:adrianjalayer@gmail.com">adrianjalayer@gmail.com</a>
+        <section id="skills" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5" data-i18n="skills.title">My Toolkit</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-2 col-sm-4 col-6 mb-4">
+                        <div class="skill-item text-center glitch" data-text="HTML5">
+                            <i class="fab fa-html5 fa-3x mb-3"></i>
+                            <h5>HTML5</h5>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fab fa-telegram"></i>
-                        <a href="https://t.me/AJ8083MH">@AJ8083MH</a>
+                    <div class="col-md-2 col-sm-4 col-6 mb-4">
+                        <div class="skill-item text-center glitch" data-text="CSS3">
+                            <i class="fab fa-css3-alt fa-3x mb-3"></i>
+                            <h5>CSS3</h5>
+                        </div>
                     </div>
-                    <div class="social-icons">
-                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <div class="col-md-2 col-sm-4 col-6 mb-4">
+                        <div class="skill-item text-center glitch" data-text="JavaScript">
+                            <i class="fab fa-js fa-3x mb-3"></i>
+                            <h5>JavaScript</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-6 mb-4">
+                        <div class="skill-item text-center glitch" data-text="React">
+                            <i class="fab fa-react fa-3x mb-3"></i>
+                            <h5>React</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-6 mb-4">
+                        <div class="skill-item text-center glitch" data-text="Node.js">
+                            <i class="fab fa-node-js fa-3x mb-3"></i>
+                            <h5>Node.js</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-6 mb-4">
+                        <div class="skill-item text-center glitch" data-text="Git">
+                            <i class="fab fa-git-alt fa-3x mb-3"></i>
+                            <h5>Git</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5" data-i18n="portfolio.title">Featured Projects</h2>
+                <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="portfolio-item">
+                                        <div class="portfolio-icon">
+                                            <i class="fas fa-shopping-cart fa-4x"></i>
+                                        </div>
+                                        <h3 data-i18n="portfolio.project1.title">E-commerce Platform</h3>
+                                        <p data-i18n="portfolio.project1.description">A fully responsive online store with dynamic product listings and secure checkout.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="portfolio-item">
+                                        <div class="portfolio-icon">
+                                            <i class="fas fa-chart-line fa-4x"></i>
+                                        </div>
+                                        <h3 data-i18n="portfolio.project2.title">Analytics Dashboard</h3>
+                                        <p data-i18n="portfolio.project2.description">Real-time data visualization and reporting tool for business intelligence.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="portfolio-item">
+                                        <div class="portfolio-icon">
+                                            <i class="fas fa-comments fa-4x"></i>
+                                        </div>
+                                        <h3 data-i18n="portfolio.project3.title">Chat Application</h3>
+                                        <p data-i18n="portfolio.project3.description">Real-time messaging app with end-to-end encryption and file sharing capabilities.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="portfolio-item">
+                                        <div class="portfolio-icon">
+                                            <i class="fas fa-tasks fa-4x"></i>
+                                        </div>
+                                        <h3 data-i18n="portfolio.project4.title">Project Management Tool</h3>
+                                        <p data-i18n="portfolio.project4.description">Collaborative platform for teams to manage tasks, deadlines, and resources efficiently.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5" data-i18n="contact.title">Get in Touch</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="name" placeholder="Your Name" data-i18n="contact.name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="email" placeholder="Your Email" data-i18n="contact.email" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" id="message" rows="5" placeholder="Your Message" data-i18n="contact.message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-i18n="contact.submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-4 text-center">
+                        <i class="fas fa-envelope fa-2x mb-3"></i>
+                        <p>adrianjalayer@gmail.com</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <i class="fab fa-telegram fa-2x mb-3"></i>
+                        <p>@AJ8083MH</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <i class="fas fa-map-marker-alt fa-2x mb-3"></i>
+                        <p data-i18n="contact.location">Tehran, Iran</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 AdrienJalayer. All rights reserved.</p>
+    <footer class="py-4 bg-dark text-white">
+        <div class="container text-center">
+            <p>&copy; 2024 Adrien Jalayer. <span data-i18n="footer.rights">All rights reserved.</span></p>
+        </div>
     </footer>
 
-    <div class="bubbles"></div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.10/i18next.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-```
