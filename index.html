@@ -1,84 +1,165 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adrin Jalayer - Front-End Web Developer</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Mohammad Adrian Jalayernia - Front-End Developer</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <nav>
+            <div class="logo">AJ</div>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#" id="lang-switch">فارسی</a></li>
             </ul>
+            <button id="lang-switch">فارسی</button>
         </nav>
     </header>
 
     <main>
         <section id="home">
-            <h1>Adrin Jalayer</h1>
-            <h2>Front-End Web Developer</h2>
-            <a href="#contact" class="cta-button">Get in Touch</a>
+            <div class="hero-carousel">
+                <div class="carousel-item active">
+                    <h2>Welcome to My Creative World</h2>
+                    <p>Transforming ideas into captivating web experiences</p>
+                </div>
+                <div class="carousel-item">
+                    <h2>Innovative Front-End Solutions</h2>
+                    <p>Crafting user-friendly and responsive designs</p>
+                </div>
+                <div class="carousel-item">
+                    <h2>Performance-Driven Development</h2>
+                    <p>Optimizing for speed and efficiency</p>
+                </div>
+                <div class="carousel-item">
+                    <h2>Clean and Maintainable Code</h2>
+                    <p>Building scalable and future-proof applications</p>
+                </div>
+                <div class="carousel-item">
+                    <h2>Creative Problem Solver</h2>
+                    <p>Turning challenges into opportunities</p>
+                </div>
+                <div class="carousel-item">
+                    <h2>Let's Collaborate</h2>
+                    <p>Bringing your vision to life with cutting-edge technology</p>
+                </div>
+            </div>
+            <div class="hero-content">
+                <h1>Mohammad Adrian Jalayernia</h1>
+                <p>Innovative Front-End Developer</p>
+                <a href="#contact" class="cta-button">Get in Touch</a>
+            </div>
         </section>
 
         <section id="about">
             <h2>About Me</h2>
-            <p>I'm a passionate front-end web developer with 1 year of experience. I specialize in creating beautiful, responsive, and user-friendly websites.</p>
-            <div class="skills">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>React</span>
-                <span>Vue.js</span>
-                <span>Responsive Design</span>
+            <div class="about-content">
+                <img src="profile-picture.jpg" alt="Mohammad Adrian Jalayernia" class="profile-picture">
+                <div class="about-text">
+                    <p>Hello! I'm Adrian, a passionate front-end developer with a knack for creating engaging and efficient user experiences. Combining strong technical skills with creativity, I build responsive and optimized websites that are not only visually appealing but also perform exceptionally well.</p>
+                    <p>I believe in strong work ethics, flexibility, and delivering projects on time. Always eager to learn new technologies and improve my skills, I strive to provide the best solutions for my clients. Let's work together to bring your web projects to life!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>My Skills</h2>
+            <div class="skills-container">
+                <div class="skill-item" data-skill="HTML5">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-item" data-skill="CSS3">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-item" data-skill="JavaScript">
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-item" data-skill="React">
+                    <i class="fab fa-react"></i>
+                    <span>React.js</span>
+                </div>
+                <div class="skill-item" data-skill="Bootstrap">
+                    <i class="fab fa-bootstrap"></i>
+                    <span>Bootstrap</span>
+                </div>
+                <div class="skill-item" data-skill="Responsive">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Responsive Design</span>
+                </div>
             </div>
         </section>
 
         <section id="portfolio">
-            <h2>My Work</h2>
-            <div class="portfolio-grid">
+            <h2>My Portfolio</h2>
+            <div class="portfolio-carousel">
                 <div class="portfolio-item">
                     <img src="project1.jpg" alt="Project 1">
-                    <h3>Project 1</h3>
-                    <p>A responsive e-commerce website</p>
+                    <h3>E-commerce Website</h3>
+                    <p>A fully responsive online store with dynamic product listings and secure checkout.</p>
                 </div>
                 <div class="portfolio-item">
                     <img src="project2.jpg" alt="Project 2">
-                    <h3>Project 2</h3>
-                    <p>An interactive dashboard</p>
+                    <h3>Social Media Dashboard</h3>
+                    <p>An interactive dashboard for managing multiple social media accounts with real-time analytics.</p>
                 </div>
                 <div class="portfolio-item">
                     <img src="project3.jpg" alt="Project 3">
-                    <h3>Project 3</h3>
-                    <p>A modern landing page</p>
+                    <h3>Portfolio Website</h3>
+                    <p>A sleek and modern portfolio website showcasing creative works with smooth animations.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="project4.jpg" alt="Project 4">
+                    <h3>Task Management App</h3>
+                    <p>A user-friendly task manager with drag-and-drop functionality and progress tracking.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="project5.jpg" alt="Project 5">
+                    <h3>Weather Forecast App</h3>
+                    <p>A weather application with location-based forecasts and interactive maps.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="project6.jpg" alt="Project 6">
+                    <h3>Restaurant Booking System</h3>
+                    <p>An online reservation system with real-time availability and menu exploration.</p>
                 </div>
             </div>
         </section>
 
         <section id="contact">
             <h2>Get in Touch</h2>
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+            <div class="contact-container">
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:adrianjalayer@gmail.com">adrianjalayer@gmail.com</a></p>
+                    <p><i class="fab fa-telegram"></i> <a href="https://t.me/adjr8083">@adjr8083</a></p>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Adrin Jalayer. All rights reserved.</p>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
+        <p>&copy; 2024 Mohammad Adrian Jalayernia. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
