@@ -1,22 +1,16 @@
 
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Adrian Jalayernia - Front-End Developer</title>
-    <link rel="stylesheet" href="style.css">
-https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <title>AdrienJalayer - Creative Front-End Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="background-animation">
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-</div>
     <header>
         <nav>
             <div class="logo">AJ</div>
@@ -32,53 +26,44 @@ https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=sw
     </header>
 
     <main>
-        <section id="home">
-            <div class="hero-carousel">
-                <div class="carousel-item active">
-                    <h2>Welcome to My Creative World</h2>
-                    <p>Transforming ideas into captivating web experiences</p>
-                </div>
-                <div class="carousel-item">
-                    <h2>Innovative Front-End Solutions</h2>
-                    <p>Crafting user-friendly and responsive designs</p>
-                </div>
-                <div class="carousel-item">
-                    <h2>Performance-Driven Development</h2>
-                    <p>Optimizing for speed and efficiency</p>
-                </div>
-                <div class="carousel-item">
-                    <h2>Clean and Maintainable Code</h2>
-                    <p>Building scalable and future-proof applications</p>
-                </div>
-                <div class="carousel-item">
-                    <h2>Creative Problem Solver</h2>
-                    <p>Turning challenges into opportunities</p>
-                </div>
-                <div class="carousel-item">
-                    <h2>Let's Collaborate</h2>
-                    <p>Bringing your vision to life with cutting-edge technology</p>
-                </div>
-            </div>
+        <section id="home" class="hero">
             <div class="hero-content">
-                <h1>Mohammad Adrian Jalayernia</h1>
-                <p>Innovative Front-End Developer</p>
-                <a href="#contact" class="cta-button">Get in Touch</a>
+                <h1 class="glitch" data-text="AdrienJalayer">AdrienJalayer</h1>
+                <p class="tagline">Crafting Digital Experiences with Code</p>
+                <a href="#contact" class="cta-button">Let's Collaborate</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/500x500" alt="AdrienJalayer">
             </div>
         </section>
 
         <section id="about">
-            <h2>About Me</h2>
+            <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <img src="profile-picture.jpg" alt="Mohammad Adrian Jalayernia" class="profile-picture">
                 <div class="about-text">
-                    <p>Hello! I'm Adrian, a passionate front-end developer with a knack for creating engaging and efficient user experiences. Combining strong technical skills with creativity, I build responsive and optimized websites that are not only visually appealing but also perform exceptionally well.</p>
-                    <p>I believe in strong work ethics, flexibility, and delivering projects on time. Always eager to learn new technologies and improve my skills, I strive to provide the best solutions for my clients. Let's work together to bring your web projects to life!</p>
+                    <p>Hello! I'm Adrien, a passionate front-end developer with a knack for creating engaging and efficient user experiences. With a blend of technical expertise and creative flair, I transform ideas into captivating digital realities.</p>
+                    <p>My approach combines cutting-edge technologies with user-centric design principles, ensuring that every project not only looks stunning but also delivers exceptional performance and usability.</p>
+                    <a href="#portfolio" class="btn">Check Out My Work</a>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="skills">
-            <h2>My Skills</h2>
+            <h2 class="section-title">My Toolkit</h2>
             <div class="skills-container">
                 <div class="skill-item" data-skill="HTML5">
                     <i class="fab fa-html5"></i>
@@ -108,54 +93,53 @@ https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=sw
         </section>
 
         <section id="portfolio">
-            <h2>My Portfolio</h2>
-            <div class="portfolio-carousel">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <img src="project1.jpg" alt="Project 1">
-                    <h3>E-commerce Website</h3>
-                    <p>A fully responsive online store with dynamic product listings and secure checkout.</p>
+                    <img src="https://via.placeholder.com/400x300" alt="Project 1">
+                    <div class="portfolio-overlay">
+                        <h3>E-commerce Platform</h3>
+                        <p>A fully responsive online store with dynamic product listings and secure checkout.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="project2.jpg" alt="Project 2">
-                    <h3>Social Media Dashboard</h3>
-                    <p>An interactive dashboard for managing multiple social media accounts with real-time analytics.</p>
+                    <img src="https://via.placeholder.com/400x300" alt="Project 2">
+                    <div class="portfolio-overlay">
+                        <h3>Social Media Dashboard</h3>
+                        <p>An interactive dashboard for managing multiple social media accounts with real-time analytics.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="project3.jpg" alt="Project 3">
-                    <h3>Portfolio Website</h3>
-                    <p>A sleek and modern portfolio website showcasing creative works with smooth animations.</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="project4.jpg" alt="Project 4">
-                    <h3>Task Management App</h3>
-                    <p>A user-friendly task manager with drag-and-drop functionality and progress tracking.</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="project5.jpg" alt="Project 5">
-                    <h3>Weather Forecast App</h3>
-                    <p>A weather application with location-based forecasts and interactive maps.</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="project6.jpg" alt="Project 6">
-                    <h3>Restaurant Booking System</h3>
-                    <p>An online reservation system with real-time availability and menu exploration.</p>
+                    <img src="https://via.placeholder.com/400x300" alt="Project 3">
+                    <div class="portfolio-overlay">
+                        <h3>Task Management App</h3>
+                        <p>A user-friendly task manager with drag-and-drop functionality and progress tracking.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Get in Touch</h2>
+            <h2 class="section-title">Get in Touch</h2>
             <div class="contact-container">
                 <form id="contact-form">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
+                    <button type="submit" class="btn">Send Message</button>
                 </form>
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:adrianjalayer@gmail.com">adrianjalayer@gmail.com</a></p>
-                    <p><i class="fab fa-telegram"></i> <a href="https://t.me/adjr8083">@adjr8083</a></p>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:adrianjalayer@gmail.com">adrianjalayer@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-telegram"></i>
+                        <a href="https://t.me/AJ8083MH">@AJ8083MH</a>
+                    </div>
                     <div class="social-icons">
                         <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-github"></i></a>
@@ -167,9 +151,12 @@ https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=sw
     </main>
 
     <footer>
-        <p>&copy; 2024 Mohammad Adrian Jalayernia. All rights reserved.</p>
+        <p>&copy; 2024 AdrienJalayer. All rights reserved.</p>
     </footer>
+
+    <div class="bubbles"></div>
 
     <script src="script.js"></script>
 </body>
 </html>
+```
