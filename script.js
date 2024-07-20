@@ -185,3 +185,25 @@ document.addEventListener('DOMContentLoaded', function() {
         new typeWriter(txtElement, words, wait);
     }
 });
+   // Check system preference for dark mode
+   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+     document.body.classList.add('dark-mode');
+     darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+   }
+
+   // Listen for changes in system preference
+   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+     if (e.matches) {
+       document.body.classList.add('dark-mode');
+       darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+     } else {
+       document.body.classList.remove('dark-mode');
+       darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+     }
+   });
+// Add animation to skills and portfolio items
+   const animateItems = document.querySelectorAll('.skill-item, .portfolio-item');
+   animateItems.forEach((item, index) => {
+     item.style.animationDelay = `${index * 0.1}s`;
+     item.classList.add('animate__animated', 'animate__fadeInUp');
+   });
