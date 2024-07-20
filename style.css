@@ -1,12 +1,14 @@
- 
+
 :root {
-  --primary-color: #00c3ff;
-  --secondary-color: #ff00ff;
+  --primary-light: #007bff;
+  --secondary-light: #ffffff;
   --background-light: #f8f9fa;
-  --background-dark: #1a1a1a;
   --text-light: #333333;
+  
+  --primary-dark: #00ff9d;
+  --secondary-dark: #ff00ff;
+  --background-dark: #121212;
   --text-dark: #ffffff;
-  --accent-color: #ffd700;
 }
 
 body {
@@ -31,16 +33,22 @@ body.dark-mode {
 }
 
 .light-mode .navbar {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: var(--secondary-light);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .dark-mode .navbar {
-  background-color: rgba(26, 26, 26, 0.9);
+  background-color: rgba(18, 18, 18, 0.8);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .navbar-brand {
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--primary-light);
+}
+
+.dark-mode .navbar-brand {
+  color: var(--primary-dark);
 }
 
 .nav-link {
@@ -53,220 +61,120 @@ body.dark-mode {
 }
 
 .nav-link:hover {
-  color: var(--primary-color);
+  color: var(--primary-light);
 }
 
-/* Glitch Effect */
-.glitch {
-  position: relative;
-  color: var(--primary-color);
-  font-weight: 700;
-}
-
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.glitch::before {
-  left: 2px;
-  text-shadow: -2px 0 var(--secondary-color);
-  clip: rect(44px, 450px, 56px, 0);
-  animation: glitch-anim 5s infinite linear alternate-reverse;
-}
-
-.glitch::after {
-  left: -2px;
-  text-shadow: -2px 0 var(--accent-color);
-  clip: rect(44px, 450px, 56px, 0);
-  animation: glitch-anim 5s infinite linear alternate-reverse;
-}
-
-@keyframes glitch-anim {
-  0% { clip: rect(31px, 9999px, 94px, 0); }
-  10% { clip: rect(112px, 9999px, 76px, 0); }
-  20% { clip: rect(85px, 9999px, 77px, 0); }
-  30% { clip: rect(27px, 9999px, 97px, 0); }
-  40% { clip: rect(64px, 9999px, 98px, 0); }
-  50% { clip: rect(61px, 9999px, 85px, 0); }
-  60% { clip: rect(99px, 9999px, 114px, 0); }
-  70% { clip: rect(34px, 9999px, 115px, 0); }
-  80% { clip: rect(98px, 9999px, 129px, 0); }
-  90% { clip: rect(43px, 9999px, 96px, 0); }
-  100% { clip: rect(82px, 9999px, 64px, 0); }
+.dark-mode .nav-link:hover {
+  color: var(--primary-dark);
 }
 
 /* Hero Section */
 #home {
   padding: 100px 0;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(135deg, var(--primary-light) 0%, #0056b3 100%);
   color: white;
 }
 
-.hero-shape {
-  width: 300px;
-  height: 300px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  animation: morphing 10s ease-in-out infinite;
-}
-
-@keyframes morphing {
-  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-  25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
-  50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
-  75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
-}
-
-/* About Section */
-#about {
-  background-color: var(--background-light);
-}
-
-.dark-mode #about {
-  background-color: var(--background-dark);
-}
-
-.feature-icon {
-  color: var(--primary-color);
+.dark-mode #home {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
 }
 
 /* Skills Section */
 .skill-item {
   padding: 20px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--secondary-light);
   transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.dark-mode .skill-item {
+  background-color: rgba(255,255,255,0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .skill-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 .skill-item i {
-  color: var(--primary-color);
+  color: var(--primary-light);
+}
+
+.dark-mode .skill-item i {
+  color: var(--primary-dark);
 }
 
 /* Portfolio Section */
-#portfolio {
-  background-color: var(--background-light);
-}
-
-.dark-mode #portfolio {
-  background-color: var(--background-dark);
-}
-
 .portfolio-item {
   padding: 30px;
   border-radius: 10px;
-  background-color: white;
+  background-color: var(--secondary-light);
   transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .dark-mode .portfolio-item {
-  background-color: #2a2a2a;
+  background-color: rgba(255,255,255,0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .portfolio-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 .portfolio-icon {
-  color: var(--primary-color);
-  margin-bottom: 20px;
+  color: var(--primary-light);
+}
+
+.dark-mode .portfolio-icon {
+  color: var(--primary-dark);
 }
 
 /* Contact Section */
-#contact {
-  background-color: var(--background-light);
-}
-
-.dark-mode #contact {
-  background-color: var(--background-dark);
-}
-
 .form-control {
   border: none;
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--primary-light);
   border-radius: 0;
   padding: 10px 0;
   background-color: transparent;
   transition: border-color 0.3s;
 }
 
+.dark-mode .form-control {
+  border-bottom-color: var(--primary-dark);
+  color: var(--text-dark);
+}
+
 .form-control:focus {
   box-shadow: none;
-  border-color: var(--secondary-color);
+  border-color: var(--secondary-light);
 }
 
-/* Footer */
-footer {
-  background-color: #333;
-  color: white;
+.dark-mode .form-control:focus {
+  border-color: var(--secondary-dark);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-shape {
-    width: 200px;
-    height: 200px;
-  }
-
-  .skill-item {
-    margin-bottom: 20px;
-  }
-
-  .portfolio-item {
-    margin-bottom: 30px;
-  }
+/* Button Styles */
+.btn-primary {
+  background-color: var(--primary-light);
+  border-color: var(--primary-light);
 }
 
-/* Dark Mode Toggle */
-#darkModeToggle, #languageToggle {
-  background-color: transparent;
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  padding: 5px 10px;
-  border-radius: 20px;
-  transition: background-color 0.3s, color 0.3s;
+.dark-mode .btn-primary {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: var(--background-dark);
 }
 
-#darkModeToggle:hover, #languageToggle:hover {
-  background-color: var(--primary-color);
-  color: white;
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
 }
 
-/* Animations */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.skill-item, .portfolio-item {
-  animation: float 5s ease-in-out infinite;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--background-light);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary-color);
+.dark-mode .btn-primary:hover {
+  background-color: #00cc7d;
+  border-color: #00cc7d;
 }
