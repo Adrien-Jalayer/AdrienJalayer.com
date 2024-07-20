@@ -1,4 +1,63 @@
+/* Font styles */
+:root {
+  --font-primary: 'Poppins', 'Vazirmatn', sans-serif;
+  --font-secondary: 'Vazirmatn', 'Poppins', sans-serif;
+}
 
+body {
+  font-family: var(--font-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-weight: 600;
+}
+
+/* Language-specific font settings */
+html[lang="en"] {
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Poppins', sans-serif;
+}
+
+html[lang="fa"] {
+  --font-primary: 'Vazirmatn', sans-serif;
+  --font-secondary: 'Vazirmatn', sans-serif;
+}
+
+/* Additional typography styles */
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #00ff9d;
+}
+
+p {
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.btn {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 /* Reset and base styles */
 * {
   margin: 0;
