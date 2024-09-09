@@ -490,13 +490,13 @@ nav {
   transform: translateY(0);
 }
 
-.image-1 { background-image: url(/pics/1.jpg); }
-.image-2 { background-image: url(/pics/2.jpg); }
-.image-3 { background-image: url(/pics/3.jpg); }
-.image-4 { background-image: url(/pics/4.jpg); }
-.image-5 { background-image: url(/pics/5.jpg); }
-.image-6 { background-image: url(/pics/6.jpg); }
-.image-7 { background-image: url(/pics/7.jpg); }
+.image-1 { background-image: url(pics/1.jpg); }
+.image-2 { background-image: url(pics/2.jpg); }
+.image-3 { background-image: url(pics/3.jpg); }
+.image-4 { background-image: url(pics/4.jpg); }
+.image-5 { background-image: url(pics/5.jpg); }
+.image-6 { background-image: url(pics/6.jpg); }
+.image-7 { background-image: url(pics/7.jpg); }
 
 
 @media screen and (max-width: 900px) {
