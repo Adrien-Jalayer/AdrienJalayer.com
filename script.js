@@ -1,210 +1,210 @@
+// Hamburger Menu Scripts
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Dark Mode Toggle
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
-
-    darkModeToggle.addEventListener('click', function() {
-        body.classList.toggle('dark-mode');
-        if (body.classList.contains('dark-mode')) {
-            localStorage.setItem('darkMode', 'enabled');
-            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        } else {
-            localStorage.setItem('darkMode', 'disabled');
-            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        }
-    });
-
-    // Check for saved dark mode preference
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        body.classList.add('dark-mode');
-        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    }
-
-    // Language Toggle
-    const languageToggle = document.getElementById('languageToggle');
-    let currentLang = 'en';
-
-    languageToggle.addEventListener('click', function() {
-        currentLang = currentLang === 'en' ? 'fa' : 'en';
-        changeLanguage(currentLang);
-    });
-
-    // Initialize i18next
-    i18next.init({
-        lng: 'en',
-        resources: {
-            en: {
-                translation: {
-                    "nav.home": "Home",
-                    "nav.about": "About",
-                    "nav.skills": "Skills",
-                    "nav.portfolio": "Portfolio",
-                    "nav.contact": "Contact",
-                    "home.tagline": "Crafting Digital Experiences with Code",
-                    "home.cta": "Let's Collaborate",
-                    // Add more translations here
-                }
-            },
-            fa: {
-                translation: {
-                    "nav.home": "خانه",
-                    "nav.about": "درباره من",
-                    "nav.skills": "مهارت‌ها",
-                    "nav.portfolio": "نمونه کارها",
-                    "nav.contact": "تماس",
-                    "home.tagline": "ساخت تجربیات دیجیتال با کد",
-                    "home.cta": "همکاری کنیم",
-                    // Add more translations here
-                }
-            }
-        }
-    }, function(err, t) {
-        updateContent();
-    });
-
-    function changeLanguage(lang) {
-        i18next.changeLanguage(lang, () => {
-            updateContent();
-            languageToggle.textContent = lang.toUpperCase();
-        });
-    }
-
-    function updateContent() {
-        document.querySelectorAll('[data-i18n]').forEach(element => {
-            const key = element.getAttribute('data-i18n');
-            element.textContent = i18next.t(key);
-        });
-    }
-
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Scroll Animations
-    const scrollElements = document.querySelectorAll('.scroll-animation');
-
-    const elementInView = (el, percentageScroll = 100) => {
-        const elementTop = el.getBoundingClientRect().top;
-        return (
-            elementTop <= 
-            ((window.innerHeight || document.documentElement.clientHeight) * (percentageScroll/100))
-        );
-    };
-
-    const displayScrollElement = (element) => {
-        element.classList.add('scrolled');
-    };
-
-    const hideScrollElement = (element) => {
-        element.classList.remove('scrolled');
-    };
-
-    const handleScrollAnimation = () => {
-        scrollElements.forEach((el) => {
-            if (elementInView(el, 100)) {
-                displayScrollElement(el);
-            } else {
-                hideScrollElement(el);
-            }
-        })
-    }
-
-    window.addEventListener('scroll', () => {
-        handleScrollAnimation();
-    });
-
-    // Form Submission
-    const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Here you would typically send the form data to a server
-        // For demonstration, we'll just log it to the console
-        console.log('Form submitted:', {
-            name: this.name.value,
-            email: this.email.value,
-            message: this.message.value
-        });
-        alert('Thanks for your message! I\'ll get back to you soon.');
-        this.reset();
-    });
-
-    // Typewriter Effect
-    const typeWriter = function(txtElement, words, wait = 3000) {
-        this.txtElement = txtElement;
-        this.words = words;
-        this.txt = '';
-        this.wordIndex = 0;
-        this.wait = parseInt(wait, 10);
-        this.type();
-        this.isDeleting = false;
-    }
-
-    typeWriter.prototype.type = function() {
-        const current = this.wordIndex % this.words.length;
-        const fullTxt = this.words[current];
-
-        if(this.isDeleting) {
-            this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-            this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
-
-        this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
-
-        let typeSpeed = 300;
-
-        if(this.isDeleting) {
-            typeSpeed /= 2;
-        }
-
-        if(!this.isDeleting && this.txt === fullTxt) {
-            typeSpeed = this.wait;
-            this.isDeleting = true;
-        } else if(this.isDeleting && this.txt === '') {
-            this.isDeleting = false;
-            this.wordIndex++;
-            typeSpeed = 500;
-        }
-
-        setTimeout(() => this.type(), typeSpeed);
-    }
-
-    document.addEventListener('DOMContentLoaded', init);
-
-    function init() {
-        const txtElement = document.querySelector('.txt-type');
-        const words = JSON.parse(txtElement.getAttribute('data-words'));
-        const wait = txtElement.getAttribute('data-wait');
-        new typeWriter(txtElement, words, wait);
-    }
+const hamburger = document.querySelector(".hamburg");
+const cancel = document.querySelector(".cancel");
+const navbar = document.querySelector(".dropdown");
+hamburger.addEventListener("click", () => {
+  navbar.style.transform = "translateY(0px)";
 });
-   // Check system preference for dark mode
-   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-     document.body.classList.add('dark-mode');
-     darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-   }
+cancel.addEventListener("click", () => {
+  navbar.style.transform = "translateY(-500px)";
+});
 
-   // Listen for changes in system preference
-   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-     if (e.matches) {
-       document.body.classList.add('dark-mode');
-       darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-     } else {
-       document.body.classList.remove('dark-mode');
-       darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-     }
-   });
-// Add animation to skills and portfolio items
-   const animateItems = document.querySelectorAll('.skill-item, .portfolio-item');
-   animateItems.forEach((item, index) => {
-     item.style.animationDelay = `${index * 0.1}s`;
-     item.classList.add('animate__animated', 'animate__fadeInUp');
-   });
-AOS.init(); 
+
+// TypeWriter scripts
+
+const texts = [
+  { text: "WEB DEVELOPER", speed: 100, eraseSpeed: 50 },
+  { text: "WEB DESIGNER", speed: 150, eraseSpeed: 75 },
+];
+
+const pauseBetweenTexts = 1000; 
+const pauseAfterErase = 500; 
+
+const textElement = document.querySelector(".typewriter-text");
+let textIndex = 0;
+let characterIndex = 0;
+
+function typeWriter() {
+  const currentText = texts[textIndex].text;
+  const currentSpeed = texts[textIndex].speed;
+
+  if (characterIndex < currentText.length) {
+    textElement.innerHTML += currentText.charAt(characterIndex);
+    characterIndex++;
+    setTimeout(typeWriter, currentSpeed);
+  } else {
+    setTimeout(eraseText, pauseBetweenTexts);
+  }
+}
+
+function eraseText() {
+  const currentText = texts[textIndex].text;
+  const currentEraseSpeed = texts[textIndex].eraseSpeed;
+
+  if (characterIndex > 0) {
+    textElement.innerHTML = currentText.substring(0, characterIndex - 1);
+    characterIndex--;
+    setTimeout(eraseText, currentEraseSpeed);
+  } else {
+    textIndex = (textIndex + 1) % texts.length;
+    setTimeout(typeWriter, pauseAfterErase);
+  }
+}
+
+
+window.onload = () => {
+  if (textElement) {
+    typeWriter();
+  } else {
+    console.error("Element with class 'typewriter-text' not found.");
+  }
+};
+
+// Gallery Script
+
+document.addEventListener('DOMContentLoaded', () => {
+  const gallery = document.querySelector('.services-gallery');
+  let activePanel = null;
+  let isMobile = window.innerWidth <= 900;
+
+  // مدیریت فعال کردن پنل
+  function handlePanelActivation(panel) {
+    if (activePanel) activePanel.classList.remove('active');
+    panel.classList.add('active');
+    activePanel = panel;
+
+    const h3Element = panel.querySelector('h3');
+    if (panel.classList.contains('active')) {
+      h3Element.style.transform = "rotate(0deg)";
+      h3Element.style.writingMode = "horizontal-tb";
+    } else {
+      h3Element.style.transform = "rotate(-180deg)";
+      h3Element.style.writingMode = "vertical-rl";
+    }
+
+    if (isMobile) {
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  // مدیریت ناوبری با صفحه‌کلید
+  function handleKeyboardNavigation(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handlePanelActivation(e.target.closest('.panel'));
+    }
+  }
+
+  // مدیریت کلیک روی پنل‌ها
+  gallery.addEventListener('click', (e) => {
+    const panel = e.target.closest('.panel');
+    if (panel) handlePanelActivation(panel);
+  });
+
+  // مدیریت صفحه‌کلید
+  gallery.addEventListener('keydown', (e) => {
+    const panel = e.target.closest('.panel');
+    if (panel) handleKeyboardNavigation(e);
+  });
+
+  // مدیریت نمایش پنل‌ها با IntersectionObserver
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.panel').forEach(panel => {
+    observer.observe(panel);
+    panel.setAttribute('tabindex', '0'); // اضافه کردن امکان فوکوس برای ناوبری صفحه‌کلید
+  });
+
+  // تنظیمات هنگام تغییر اندازه صفحه
+  window.addEventListener('resize', () => {
+    isMobile = window.innerWidth <= 900;
+    if (!isMobile && activePanel) {
+      activePanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  });
+});
+
+// Skills scripts
+ 
+const technicalSkills = [
+  { name: 'HTML5', icon: 'fab fa-html5', progress: 90 },
+  { name: 'CSS3', icon: 'fab fa-css3-alt', progress: 85 },
+  { name: 'JavaScript', icon: 'fab fa-js', progress: 80 },
+  { name: 'Sass', icon: 'fab fa-sass', progress: 75 },
+  { name: 'React.js', icon: 'fab fa-react', progress: 85 },
+  { name: 'Redux', icon: 'fas fa-code-branch', progress: 70 },
+  { name: 'Next.js', icon: 'fab fa-node-js', progress: 75 },
+  { name: 'TypeScript', icon: 'fas fa-code', progress: 70 },
+  { name: 'Bootstrap5', icon: 'fab fa-bootstrap', progress: 80 },
+  { name: 'Git', icon: 'fab fa-git-alt', progress: 75 },
+  { name: 'GitHub', icon: 'fab fa-github', progress: 80 },
+  { name: 'WordPress', icon: 'fab fa-wordpress', progress: 70 },
+  { name: 'Tailwind', icon: 'fas fa-wind', progress: 75 }
+];
+
+const otherSkills = [
+  { name: 'Figma', icon: 'fab fa-figma', progress: 65 },
+  { name: 'Responsive Design', icon: 'fas fa-mobile-alt', progress: 85 },
+  { name: 'SEO', icon: 'fas fa-search', progress: 70 },
+  { name: 'UI/UX', icon: 'fas fa-palette', progress: 75 },
+  { name: 'PWA', icon: 'fas fa-mobile-alt', progress: 65 },
+  { name: 'Optimization', icon: 'fas fa-tachometer-alt', progress: 70 },
+  { name: 'E-commerce', icon: 'fas fa-shopping-cart', progress: 75 },
+  { name: 'Testing', icon: 'fas fa-vial', progress: 65 },
+  { name: 'API', icon: 'fas fa-plug', progress: 80 }
+];
+
+function createSkillItem(skill) {
+  return `
+      <div class="skill-item">
+          <div class="progress-ring">
+              <svg class="progress-ring-circle">
+                  <circle cx="40" cy="40" r="35"></circle>
+              </svg>
+              <div class="skill-icon">
+                  <i class="${skill.icon}"></i>
+              </div>
+          </div>
+          <div class="skill-name">${skill.name}</div>
+      </div>
+  `;
+}
+
+function setProgress(circle, percent) {
+  const radius = circle.r.baseVal.value;
+  const circumference = radius * 2 * Math.PI;
+  circle.style.strokeDasharray = `${circumference} ${circumference}`;
+  const offset = circumference - (percent / 100) * circumference;
+  circle.style.strokeDashoffset = offset;
+}
+
+function populateCarousel(skills, carouselElement) {
+  let html = '';
+  for (let i = 0; i < 3; i++) { 
+      skills.forEach(skill => {
+          html += `<div class="carousel-column">${createSkillItem(skill)}</div>`;
+      });
+  }
+  carouselElement.innerHTML = html;
+
+ 
+  carouselElement.querySelectorAll('.progress-ring-circle circle').forEach((circle, index) => {
+      setProgress(circle, skills[index % skills.length].progress);
+  });
+}
+
+
+populateCarousel(technicalSkills, document.querySelector('.row-1 .carousel'));
+populateCarousel(otherSkills, document.querySelector('.row-2 .carousel'));
+
+
+
+
